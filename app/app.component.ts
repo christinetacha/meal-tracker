@@ -11,3 +11,10 @@ import { Component } from 'angular2/core';
 export class AppComponent {
 
 }
+
+export class Meal {
+  public done: boolean = false;
+  constructor(public name: string, public calories: number, public description: string) {
+
+  }
+}
