@@ -3,13 +3,23 @@ import { Component } from 'angular2/core';
 @Component({
   selector: 'my-app',
   template: `
-    <div class="container">
-      <h1>Skeleton Angular2 App!</h1>
+  <div class="container">
+    <div>
+      <meal-list [meal-list]="meals"></meal-list>
     </div>
+  </div>
   `
 })
-export class AppComponent {
 
+export class AppComponent {
+  public meals: Meal[];
+  constructor() {
+    this.meals = [
+      new Meal("Burrito", 370, "Lean meat", 0),
+      new Meal("Hamburger", 340, "No cheese", 1),
+      new Meal("Wrap", 250, "Mostly salad", 2)
+    ];
+  }
 }
 
 export class Meal {
