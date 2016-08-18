@@ -1,13 +1,15 @@
-import { Component } from 'angular2/core';
+import { Component, EventEmitter } from 'angular2/core';
+import { Meal } from './meal.model';
+import { MealListComponent } from './meal-list.component';
 
 @Component({
   selector: 'my-app',
   template: `
-  <div class="container">
-    <div>
-      <meal-list [meal-list]="meals"></meal-list>
+    <div class="container center">
+      <h1>Skeleton Angular2 App!</h1>
+      <p>This is also part of the template!</p>
+      <p>Jon said 'always drink upstream from the herd'</p>
     </div>
-  </div>
   `
 })
 
@@ -15,16 +17,10 @@ export class AppComponent {
   public meals: Meal[];
   constructor() {
     this.meals = [
-      new Meal("Burrito", 370, "Lean meat", 0),
-      new Meal("Hamburger", 340, "No cheese", 1),
-      new Meal("Wrap", 250, "Mostly salad", 2)
+      new Meal("Burrito", "Tings", "370", 0)
     ];
   }
-}
-
-export class Meal {
-  public done: boolean = false;
-  constructor(public name: string, public calories: number, public description: string) {
+  mealWasSelected(clickedMeal: Meal): void {
 
   }
 }
